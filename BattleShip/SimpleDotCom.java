@@ -1,50 +1,51 @@
 package BattleShip;
 
+import java.util.ArrayList;
+
 public class SimpleDotCom {
-    int[] locationCells;
+    ArrayList<String> locationCells = new ArrayList<String>();
     int numOfHits;
 
-    public String checkYourself(String stringGuess) {
-        int guess = Integer.parseInt(stringGuess);
-        String result = "miss";
+    void setLocationCells(ArrayList<String> newLocationCells) {
+        locationCells = newLocationCells;
+    }
 
-        for (int cell : locationCells) {
-            if (guess == cell) {
+    public String checkYourself(String stringGuess) {
+        String result = "miss";
+        int index = locationCells.indexOf(stringGuess);
+        if (index >= 0) {
+            locationCells.remove(index);
+            if (locationCells.isEmpty()) {
+                result = "kill";
+            } else {
                 result = "hit";
-                numOfHits++;
-                break;
             }
         }
-
-        if (numOfHits == locationCells.length) {
-            result = "kill";
-        }
-        System.out.println(result);
         return result;
     }
 
-    void setLocationCells(int[] newLocationCells) {
-        locationCells = newLocationCells;
-    }
 }
 
-// class SimpleDotComTestDrive {
-// public static void main(String[] args) {
-// SimpleDotCom dot = new SimpleDotCom();
+class SimpleDotComTestDrive {
+    public static void main(String[] args) {
+        SimpleDotCom dot = new SimpleDotCom();
 
-// int[] locations = { 2, 3, 4 };
+        ArrayList<String> locations = new ArrayList<String>();
+        locations.add(Integer.toString(1));
+        locations.add(Integer.toString(2));
+        locations.add(Integer.toString(3));
 
-// dot.setLocationCells(locations);
+        dot.setLocationCells(locations);
 
-// String userGuess = "2";
+        String userGuess = "2";
 
-// String result = dot.checkYourself(userGuess);
+        String result = dot.checkYourself(userGuess);
 
-// String testResult = "failed";
+        String testResult = "failed";
 
-// if (result.equals("hit")) {
-// testResult = "passed";
-// }
-// System.out.println(testResult);
-// }
-// }
+        if (result.equals("hit")) {
+            testResult = "passed";
+        }
+        System.out.println(testResult);
+    }
+}
