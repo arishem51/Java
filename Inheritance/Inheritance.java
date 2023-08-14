@@ -13,9 +13,11 @@ class A {
         setIJ(i, j);
     }
 
-    void showIJ() {
-        System.out.println("I and J: " + i + " " + j);
+    void show() {
+        System.out.println("I: " + this.i);
+        System.out.println("J: " + this.j);
     }
+
 }
 
 class B extends A {
@@ -26,26 +28,23 @@ class B extends A {
         this.k = k;
     }
 
-    void showEl() {
-        this.showIJ();
+    void show() {
+        super.show();
         System.out.println("K: " + this.k);
     }
 }
 
 public class Inheritance {
     public static void main(String args[]) {
-        A classA = new A(10, 20);
-        B classB = new B(5, 2, 2);
+        // A classA = new A(10, 20);
+        B classB = new B(5, 7, 2);
 
-        System.out.println("This is class A: ");
-        classA.showIJ();
-        System.out.println();
+        // System.out.println("This is class A: ");
+        // classA.showIJ();
+        // System.out.println();
 
         System.out.println("This is class B: ");
-        classB.showEl();
+        classB.show();
         System.out.println();
-
-        // WTF dude?
-        classA = classB;
     }
 }
