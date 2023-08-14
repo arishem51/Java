@@ -1,5 +1,3 @@
-import java.util.function.Function;
-
 class Stack {
     private int stack[] = new int[10];
     private int tos;
