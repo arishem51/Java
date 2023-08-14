@@ -1,8 +1,9 @@
 class Stack {
-    private int stack[] = new int[10];
+    private int stack[];
     private int tos;
 
-    Stack() {
+    Stack(int size) {
+        stack = new int[size];
         tos = -1;
     }
 
@@ -39,11 +40,11 @@ class TestStack {
     }
 
     public static void main(String args[]) {
-        Stack myFirstStack = new Stack();
-        Stack mySecondStack = new Stack();
+        Stack myFirstStack = new Stack(5);
+        Stack mySecondStack = new Stack(9);
 
-        loop(10, myFirstStack);
-        loop(20, mySecondStack);
+        loop(5, myFirstStack);
+        loop(9, mySecondStack);
 
         myFirstStack.logItem();
     }
