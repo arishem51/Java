@@ -1,5 +1,20 @@
 package Inheritance;
 
+public class Inheritance {
+    public static void main(String args[]) {
+        // A classA = new A(10, 20);
+        B classB = new B(5, 7, 2);
+
+        // System.out.println("This is class A: ");
+        // classA.showIJ();
+        // System.out.println();
+
+        System.out.println("This is class B: ");
+        classB.show();
+        System.out.println();
+    }
+}
+
 class A {
     int i;
     private int j;
@@ -48,18 +63,3 @@ class B extends A {
 // class AnotherClass extends SomeFinalClass{
 // // Can't inheritance the final class ( SomeFinalClass ).
 // }
-
-public class Inheritance {
-    public static void main(String args[]) {
-        // A classA = new A(10, 20);
-        B classB = new B(5, 7, 2);
-
-        // System.out.println("This is class A: ");
-        // classA.showIJ();
-        // System.out.println();
-
-        System.out.println("This is class B: ");
-        classB.show();
-        System.out.println();
-    }
-}
