@@ -2,6 +2,9 @@ interface StackType {
     void push(int item);
 
     int pop();
+
+    final int DEFAULT_INITIALIZE = -1;
+    final int MAXIMUM_STACK_SIZE = 9;
 }
 
 class Stack implements StackType {
@@ -10,11 +13,11 @@ class Stack implements StackType {
 
     Stack(int size) {
         stack = new int[size];
-        tos = -1;
+        tos = DEFAULT_INITIALIZE;
     }
 
     public void push(int item) {
-        if (tos == 9) {
+        if (tos == MAXIMUM_STACK_SIZE) {
             System.out.println("Stack is full!");
         } else {
             stack[++tos] = item;
