@@ -7,7 +7,6 @@ interface StackType extends StackTypeVariables {
     void push(int item);
 
     int pop();
-
 }
 
 class Stack implements StackType {
