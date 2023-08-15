@@ -1,10 +1,13 @@
-interface StackType {
+interface StackTypeVariables {
+    final int DEFAULT_INITIALIZE = -1;
+    final int MAXIMUM_STACK_SIZE = 9;
+}
+
+interface StackType extends StackTypeVariables {
     void push(int item);
 
     int pop();
 
-    final int DEFAULT_INITIALIZE = -1;
-    final int MAXIMUM_STACK_SIZE = 9;
 }
 
 class Stack implements StackType {
