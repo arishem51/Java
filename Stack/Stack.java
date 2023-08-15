@@ -1,4 +1,10 @@
-class Stack {
+interface StackType {
+    void push(int item);
+
+    int pop();
+}
+
+class Stack implements StackType {
     private int stack[];
     private int tos;
 
@@ -7,7 +13,7 @@ class Stack {
         tos = -1;
     }
 
-    void push(int item) {
+    public void push(int item) {
         if (tos == 9) {
             System.out.println("Stack is full!");
         } else {
@@ -15,7 +21,7 @@ class Stack {
         }
     }
 
-    int pop() {
+    public int pop() {
         if (tos < 0) {
             System.out.println("Stack has no any item!");
             return 0;
