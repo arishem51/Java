@@ -42,6 +42,13 @@ class B extends A {
     // }
 }
 
+// final class SomeFinalClass {
+// //
+// }
+// class AnotherClass extends SomeFinalClass{
+// // Can't inheritance the final class ( SomeFinalClass ).
+// }
+
 public class Inheritance {
     public static void main(String args[]) {
         // A classA = new A(10, 20);
