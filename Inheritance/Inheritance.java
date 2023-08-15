@@ -18,6 +18,10 @@ class A {
         System.out.println("J: " + this.j);
     }
 
+    final void meth() {
+        System.out.println("A Final method!");
+    }
+
 }
 
 class B extends A {
@@ -32,6 +36,10 @@ class B extends A {
         super.show();
         System.out.println("K: " + this.k);
     }
+
+    // void meth() {
+    // // Can't override this method
+    // }
 }
 
 public class Inheritance {
