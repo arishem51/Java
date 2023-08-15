@@ -1,4 +1,4 @@
-package FindAreas;
+package Inheritance.FindAreas;
 
 abstract class Figure {
     double dim1;
