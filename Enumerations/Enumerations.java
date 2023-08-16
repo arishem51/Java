@@ -26,7 +26,9 @@ public class Enumerations {
         System.out.println(ap.equals(Apple.Anh));
         System.out.println(ap.equals(Apple.Hung));
 
-        for (Apple item : Apple.values()) {
+        Apple appleValues[] = Apple.values();
+
+        for (Apple item : appleValues) {
             System.out.println(item + " costs " + item.getPrice());
         }
     }
