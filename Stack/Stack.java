@@ -42,11 +42,15 @@ class Stack implements StackType {
 
 }
 
+interface LoopFunc {
+    void run(int i);
+}
+
 class TestStack {
 
-    private static void loop(int num, Stack stack) {
+    private static void loop(int num, LoopFunc func) {
         for (int i = 0; i < num; i++) {
-            stack.push(i);
+            func.run(i);
         }
     }
 
@@ -54,8 +58,8 @@ class TestStack {
         Stack myFirstStack = new Stack(5);
         Stack mySecondStack = new Stack(9);
 
-        loop(5, myFirstStack);
-        loop(9, mySecondStack);
+        loop(5, (int i) -> System.out.println(i));
+        // loop(9, mySecondStack);
 
         myFirstStack.logItem();
     }
